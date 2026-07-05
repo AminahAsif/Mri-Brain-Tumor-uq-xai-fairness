@@ -61,14 +61,14 @@ The pipeline is structured across five phases, each building on the last.
 - **Validation strategy:** Testing/ folder used as validation during training , val accuracy equals test accuracy, no optimistic gap
 - **Ablation study:** Fine-tuning contributes most (-4.06% without it), CLAHE adds +1.81%, augmentation adds +1.06%
 
-### 2. Uncertainty Quantification — Monte Carlo Dropout
+### 2. Uncertainty Quantification - Monte Carlo Dropout
 
 - Dropout(0.3) kept active at inference  50 stochastic forward passes per image
 - Backbone features extracted once with `training=False` so BatchNorm uses learned statistics  only the dropout layer is stochastic
 - Per-image uncertainty = mean standard deviation across 50 prediction distributions
 - Rejection curve validated: the model's uncertainty signal directly predicts its error likelihood
 
-### 3. Explainability Panel — Three Methods
+### 3. Explainability Panel - Three Methods
 
 - **Grad-CAM++**  class activation heatmap on EfficientNetB3's `top_conv` layer
 - **LIME**  superpixel perturbation (500 samples, 8 features)
@@ -151,7 +151,7 @@ python deployment/app.py
 
 ### Reproduce the pipeline
 
-Open any notebook in `notebooks/` in Google Colab. Each notebook starts with a reload cell that restores all variables from Drive checkpoints — no cell needs to be rerun from scratch after a session disconnect. All seeds are fixed at 42.
+Open any notebook in `notebooks/` in Google Colab. Each notebook starts with a reload cell that restores all variables from Drive checkpoints , no cell needs to be rerun from scratch after a session disconnect. All seeds are fixed at 42.
 
 ```python
 SEED = 42
@@ -167,11 +167,11 @@ Dataset: [Masoud Nickparvar — Brain Tumor MRI Dataset](https://www.kaggle.com/
 
 ## Supporting Documents
 
-- [Literature Review](docs/literature_review.md) — 13 papers, what I took from each one
-- [Research Proposal](docs/research_proposal.md) — the question this project is answering and why it matters
-- [XAI Qualitative Analysis](docs/xai_qualitative_analysis.md) — honest per-class findings including limitations
-- [Ethical Considerations](docs/ethical_considerations.md) — clinical disclaimer and responsible deployment requirements
-- [Limitations](docs/limitations.md) — what this project cannot claim and why
+- [Literature Review](docs/literature_review.md) - 13 papers, what I took from each one
+- [Research Proposal](docs/research_proposal.md) - the question this project is answering and why it matters
+- [XAI Qualitative Analysis](docs/xai_qualitative_analysis.md) - honest per-class findings including limitations
+- [Ethical Considerations](docs/ethical_considerations.md) - clinical disclaimer and responsible deployment requirements
+- [Limitations](docs/limitations.md) - what this project cannot claim and why
 
 ---
 
@@ -181,4 +181,4 @@ This system is a research prototype developed for academic purposes. It is **not
 
 ---
 
-*Aminah Asif | IUB CS Final Year | Erasmus Mundus Portfolio Project*
+
