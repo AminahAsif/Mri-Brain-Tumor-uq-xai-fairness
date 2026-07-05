@@ -1,0 +1,56 @@
+{
+  "Scratch CNN (Baseline)": {
+    "params_m": 0.86,
+    "accuracy": 0.889375,
+    "auc": null,
+    "f1": 0.88,
+    "inference": "Fast",
+    "our_result": true,
+    "note": "Trained from scratch"
+  },
+  "MobileNetV2": {
+    "params_m": 3.4,
+    "accuracy": 0.881,
+    "auc": 0.961,
+    "f1": 0.879,
+    "inference": "Very Fast",
+    "our_result": false,
+    "note": "Literature benchmark"
+  },
+  "ResNet50": {
+    "params_m": 25.6,
+    "accuracy": 0.901,
+    "auc": 0.972,
+    "f1": 0.899,
+    "inference": "Medium",
+    "our_result": false,
+    "note": "Literature benchmark"
+  },
+  "InceptionV3": {
+    "params_m": 23.9,
+    "accuracy": 0.912,
+    "auc": 0.975,
+    "f1": 0.911,
+    "inference": "Medium",
+    "our_result": false,
+    "note": "Literature benchmark"
+  },
+  "EfficientNetB3 (Ours)": {
+    "params_m": 10.79,
+    "accuracy": 0.914375,
+    "auc": 0.9863,
+    "f1": 0.9126,
+    "inference": "Medium",
+    "our_result": true,
+    "note": "PRIMARY MODEL"
+  },
+  "VGG16": {
+    "params_m": 138.0,
+    "accuracy": 0.891,
+    "auc": 0.963,
+    "f1": 0.889,
+    "inference": "Slow",
+    "our_result": false,
+    "note": "Too heavy \u2014 skip"
+  }
+}

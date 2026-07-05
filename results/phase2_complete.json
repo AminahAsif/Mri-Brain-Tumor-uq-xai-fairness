@@ -1,0 +1,23 @@
+{
+  "mcnemar": {
+    "baseline_acc": 0.889375,
+    "effnet_acc": 0.914375,
+    "chi_square": 10.8643,
+    "p_value": 0.00098,
+    "significant": true
+  },
+  "mc_dropout": {
+    "n_passes": 50,
+    "mc_accuracy": 0.91375,
+    "mean_uncertainty": 0.020878813556254525,
+    "mean_unc_correct": 0.01585,
+    "mean_unc_incorrect": 0.07413,
+    "uncertainty_ratio": 4.68
+  },
+  "rejection_curve": {
+    "acc_at_100pct": 0.9138,
+    "acc_at_80pct": 0.9805,
+    "acc_at_50pct": 0.9988,
+    "acc_at_45pct": 1.0
+  }
+}

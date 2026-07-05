@@ -1,0 +1,16 @@
+{
+  "note": "Demographics are simulated based on epidemiological literature \u2014 no real patient metadata available in this public dataset.",
+  "gender": {
+    "male_acc": 0.9237967914438503,
+    "female_acc": 0.9061032863849765,
+    "gap": 0.017693505058873793
+  },
+  "age_group": {
+    "acc_18_40": 0.9361313868613139,
+    "acc_41_60": 0.9049128367670365,
+    "acc_61_plus": 0.9002375296912114,
+    "gap": 0.03589385717010252
+  },
+  "high_uncertainty_threshold_percentile": 80,
+  "high_uncertainty_threshold_value": 0.044485345450263385
+}

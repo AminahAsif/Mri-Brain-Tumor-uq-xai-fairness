@@ -1,0 +1,9 @@
+{
+  "mc_accuracy_no_rejection": 0.91375,
+  "acc_at_80pct_retained": 0.98046875,
+  "acc_at_50pct_retained": 0.99875,
+  "mean_uncertainty_correct": 0.01585204988633286,
+  "mean_uncertainty_incorrect": 0.07413336779846809,
+  "n_correct": 1462,
+  "n_incorrect": 138
+}
