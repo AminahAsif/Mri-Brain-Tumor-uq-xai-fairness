@@ -101,31 +101,6 @@ All three methods showed spatial agreement on tumor regions for glioma and menin
 
 ---
 
-## Repository Structure
-
-```
-notebooks/
-  MRI_1_setup_baseline_efficientnet.ipynb   ← CLAHE, EfficientNetB3, scratch baseline, ablation
-  MRI_2_uncertainty_mcnemar.ipynb             ← MC Dropout, rejection curve, McNemar, ROC-AUC, ECE
-  MRI_3_xai_explainability.ipynb              ← Grad-CAM++, LIME, Integrated Gradients
-  MRI_4_fairness_audit.ipynb                  ← Fairlearn, AIF360, artifact robustness
-  MRI_5_deployment.ipynb                      ← Gradio app, HuggingFace deployment
-
-docs/
-  literature_review.md          ← 13 papers across 5 themes
-  research_proposal.md          ← research question, gaps, clinical motivation
-  xai_qualitative_analysis.md   ← per-class XAI findings and method disagreements
-  ethical_considerations.md     ← clinical disclaimer, bias disclosure
-  limitations.md                ← single dataset, simulated demographics, Grad-CAM fragility
-
-results/
-  figures/                      ← all plots
-  metrics/                      ← all JSON metrics files
-  predictions/                  ← saved numpy arrays for full reproducibility
-```
-
----
-
 ## Quick Start
 
 ### Prerequisites
