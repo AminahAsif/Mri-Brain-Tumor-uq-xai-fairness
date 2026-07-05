@@ -5,7 +5,7 @@
 
 This project builds a clinically-motivated brain tumor MRI classification pipeline that goes beyond accuracy reporting. By combining EfficientNetB3 transfer learning with Monte Carlo Dropout uncertainty quantification, three complementary XAI methods, and a fairness audit, the system is designed to communicate not just *what* it predicts, but *how confident* it is and *where* it looks ,the three things a radiologist would actually need before trusting a model's output.
 
-The core finding: when the model defers its 20% most uncertain predictions to a human reviewer, accuracy on the remaining cases rises from 91.4% to 98.1%. Incorrect predictions carry 4.7× higher uncertainty than correct ones — proven statistically (Mann-Whitney p=1.68e-58). The model genuinely knows when it doesn't know.
+The core finding: when the model defers its 20% most uncertain predictions to a human reviewer, accuracy on the remaining cases rises from 91.4% to 98.1%. Incorrect predictions carry 4.7× higher uncertainty than correct ones , proven statistically (Mann-Whitney p=1.68e-58). The model genuinely knows when it doesn't know.
 
 ---
 
