@@ -31,14 +31,14 @@ This is the result I'm most proud of. When the model defers its 20% most uncerta
 
 What's in this repo
 
-notebooks/
+notebooks
   MRI_1_setup_baseline_efficientnet.ipynb   ← baseline CNN, CLAHE, EfficientNetB3 training
   MRI_2_uncertainty_mcnemar.ipynb             ← MC Dropout, rejection curve, McNemar, ROC-AUC, ECE
   MRI_3_xai_explainability.ipynb              ← Grad-CAM++, LIME, Integrated Gradients
   MRI_4_fairness_audit.ipynb                  ← Fairlearn, AIF360, artifact robustness testing
   MRI_5_deployment.ipynb                      ← Gradio app, HuggingFace deployment
 
-docs/
+docs
   literature_review.md          ← 13 papers across transfer learning, UQ, XAI, fairness, conformal prediction
   research_proposal.md          ← research question, identified gaps, clinical motivation
   xai_qualitative_analysis.md   ← per-class Grad-CAM++, LIME, IG findings and disagreements
@@ -54,11 +54,11 @@ I started by training a small scratch CNN (863K params) as a fixed baseline , 88
 
 The ablation study tells the story of what each component actually contributes:
 
-VariantAccuracyvs FullNo CLAHE89.62%-1.81%Frozen backbone only87.38%-4.06%No augmentation90.38%-1.06%Full pipeline91.44%—
+Variant Accuracy vs Full No CLAHE 89.62% -1.81% Frozen backbone only 87.38% -4.06 % No augmentation 90.38% -1.06% Full pipeline 91.44%
 
 Notebook 2: Uncertainty quantification
 
-I kept Dropout(0.3) active at inference time and ran 50 stochastic forward passes per image — but with a specific architectural choice: backbone features are extracted once with training=False (so BatchNorm uses learned population statistics), then only the dropout layer is stochastic across passes. This avoids the common mistake of calling model(x, training=True) which corrupts predictions by putting BatchNorm in training mode. The result is 50 valid probability distributions per image, from which I compute mean prediction and standard deviation as an uncertainty estimate.
+I kept Dropout(0.3) active at inference time and ran 50 stochastic forward passes per image  but with a specific architectural choice: backbone features are extracted once with training=False (so BatchNorm uses learned population statistics), then only the dropout layer is stochastic across passes. This avoids the common mistake of calling model(x, training=True) which corrupts predictions by putting BatchNorm in training mode. The result is 50 valid probability distributions per image, from which I compute mean prediction and standard deviation as an uncertainty estimate.
 
 I then ran four Mann-Whitney U tests to verify the uncertainty signal is statistically real , not just a curiosity. The most useful result: borderline glioma↔meningioma misclassifications have 2.4× higher uncertainty than correctly classified cases of the same classes (p<1e-20).
 
@@ -79,7 +79,7 @@ Gradio interface with an uncertainty flag (red if std > 0.15, green if std < 0.0
 
 Reproducing this project
 
-Everything is saved to Google Drive — model checkpoints, predictions as numpy arrays, metrics as JSON files. Every notebook starts with a reload cell that restores all variables from Drive. SEED=42 is fixed throughout.
+Everything is saved to Google Drive , model checkpoints, predictions as numpy arrays, metrics as JSON files. Every notebook starts with a reload cell that restores all variables from Drive. SEED=42 is fixed throughout.
 
 pythonSEED = 42
 os.environ['PYTHONHASHSEED'] = str(SEED)
