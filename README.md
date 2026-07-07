@@ -142,17 +142,17 @@ Dataset: [Masoud Nickparvar — Brain Tumor MRI Dataset](https://www.kaggle.com/
 
 ## Supporting Documents
 
-- [Literature Review](docs/literature_review.md) - 13 papers, what I took from each one
-- [Research Proposal](docs/research_proposal.md) - the question this project is answering and why it matters
-- [XAI Qualitative Analysis](docs/xai_qualitative_analysis.md) - honest per-class findings including limitations
-- [Ethical Considerations](docs/ethical_considerations.md) - clinical disclaimer and responsible deployment requirements
-- [Limitations](docs/limitations.md) - what this project cannot claim and why
+- [Literature Review](docs/literature_review(1).md) - 13 papers, what I took from each one
+- [Research Proposal](docs/research_proposal(2).md) - the question this project is answering and why it matters
+- [XAI Qualitative Analysis](docs/xai_qualitative_analysis(1).md) - honest per-class findings including limitations
+- [Ethical Considerations](docs/ethical_considerations(1).md) - clinical disclaimer and responsible deployment requirements
+- [Limitations](docs/limitations(1).md) - what this project cannot claim and why
 
 ---
 
 ## Clinical Disclaimer
 
-This system is a research prototype developed for academic purposes. It is **not validated for clinical use** and must **not** be used to inform, replace, or influence any medical diagnosis or treatment decision. See [docs/ethical_considerations.md](docs/ethical_considerations.md).
+This system is a research prototype developed for academic purposes. It is **not validated for clinical use** and must **not** be used to inform, replace, or influence any medical diagnosis or treatment decision. See [docs/ethical_considerations.md](docs/ethical_considerations(1).md).
 
 ---
 
