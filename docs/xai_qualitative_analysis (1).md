@@ -40,7 +40,7 @@ A diffuse, non-focal explanation is exactly what you'd hope for on a healthy sca
 
 ## Pituitary (confidence: 99.9%, uncertainty: 0.0008)
 
-This is where I want to be upfront about a real limitation, and it held up even after the leakage fix. Pituitary adenomas arise from the sella turcica at the base of the brain, but the Grad-CAM++ activation for this example extended beyond that expected region into the lower face and neck area of the sagittal slice — territory that isn't anatomically specific to pituitary pathology. LIME's positive superpixels covered a broad area of the brain, and Integrated Gradients showed a similarly diffuse pattern without tightly tracking the sella turcica specifically.
+This is where I want to be upfront about a real limitation, and it held up even after the leakage fix. Pituitary adenomas arise from the sella turcica at the base of the brain, but the Grad-CAM++ activation for this example extended beyond that expected region into the lower face and neck area of the sagittal slice, territory that isn't anatomically specific to pituitary pathology. LIME's positive superpixels covered a broad area of the brain, and Integrated Gradients showed a similarly diffuse pattern without tightly tracking the sella turcica specifically.
 
 Despite this being one of the model's highest-confidence, lowest-uncertainty predictions, the spatial alignment here was the weakest of the four classes. Per-class recall on pituitary is 98.75%, and the model is 99.9% confident on this particular example, but the explanations suggest it may partly be relying on cues that aren't strictly anatomical: overall image framing, contrast characteristics, or scan orientation that happen to correlate with pituitary cases in this dataset. High confidence without a clean anatomical explanation is a known failure mode in neural networks, and I think it's worth flagging even when, especially when the raw accuracy number looks great.
 
@@ -62,4 +62,4 @@ This whole analysis is based on four images, one per class. That's standard prac
 
 The specific representative image chosen for each class is a function of which sample sits closest to the median uncertainty for that class in a given trained model, so, as this update itself demonstrates, retraining the model (even for a legitimate reason, like fixing a leakage bug) can change which case gets shown, and the qualitative texture of what it shows. That's worth keeping in mind when reading conclusions from any single representative-example figure like this one.
 
-And SHAP was dropped because of a framework incompatibility, not by choice — that's disclosed in the research proposal's limitations section too.
+And SHAP was dropped because of a framework incompatibility, not by choice, that's disclosed in the research proposal's limitations section too.
