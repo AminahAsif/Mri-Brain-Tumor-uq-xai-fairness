@@ -1,0 +1,31 @@
+{
+  "mcnemar": {
+    "baseline_accuracy": 0.9025,
+    "effnet_accuracy": 0.913125,
+    "both_correct": 1382,
+    "effnet_only": 79,
+    "baseline_only": 62,
+    "both_wrong": 77,
+    "mcnemar_statistic": 1.8156028368794326,
+    "p_value": 0.17783757586608862,
+    "significant": false,
+    "alpha": 0.05
+  },
+  "mc_dropout": {
+    "n_passes": 50,
+    "mc_accuracy": 0.9125,
+    "mean_uncertainty": 0.02119968451443367,
+    "mean_unc_correct": 0.01677938457495762,
+    "mean_unc_incorrect": 0.0672970981689696,
+    "uncertainty_ratio": 4.0107012190069895
+  },
+  "rejection_curve": {
+    "mc_accuracy_no_rejection": 0.9125,
+    "acc_at_80pct_retained": 0.971875,
+    "acc_at_50pct_retained": 1.0,
+    "mean_uncertainty_correct": 0.01677938457495762,
+    "mean_uncertainty_incorrect": 0.0672970981689696,
+    "n_correct": 1460,
+    "n_incorrect": 140
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "test1_glioma_vs_meningioma": {
+    "statistic": 44766.0,
+    "p_value": 4.219913025909514e-27,
+    "significant": true
+  },
+  "test2_meningioma_vs_notumor": {
+    "statistic": 147473.0,
+    "p_value": 1.0549863845741088e-94,
+    "significant": true
+  },
+  "test3_correct_vs_incorrect": {
+    "statistic": 20363.0,
+    "p_value": 1.1906810604353592e-55,
+    "significant": true,
+    "correct_mean_unc": 0.01677938457495762,
+    "incorrect_mean_unc": 0.0672970981689696,
+    "ratio": 4.0107012190069895
+  },
+  "test4_borderline_glioma_meningioma": {
+    "statistic": 40690.0,
+    "p_value": 1.3124380837727124e-20,
+    "significant": true,
+    "n_borderline": 74,
+    "borderline_mean_unc": 0.06815763799868668,
+    "correct_mean_unc": 0.02942603751044877
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "ece": 0.024214463196694867,
+  "mean_confidence": 0.9233941435813904,
+  "interpretation": "well-calibrated",
+  "per_class": {
+    "glioma": 0.08880098052322866,
+    "meningioma": 0.06155586302280427,
+    "notumor": 0.01807559058070183,
+    "pituitary": 0.010727104917168608
+  }
+}

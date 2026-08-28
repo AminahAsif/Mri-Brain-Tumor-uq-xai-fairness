@@ -1,0 +1,12 @@
+{
+  "baseline_accuracy": 0.9025,
+  "effnet_accuracy": 0.913125,
+  "both_correct": 1382,
+  "effnet_only": 79,
+  "baseline_only": 62,
+  "both_wrong": 77,
+  "mcnemar_statistic": 1.8156028368794326,
+  "p_value": 0.17783757586608862,
+  "significant": false,
+  "alpha": 0.05
+}

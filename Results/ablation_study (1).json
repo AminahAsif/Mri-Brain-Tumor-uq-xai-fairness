@@ -1,0 +1,8 @@
+{
+  "variant1_no_clahe": 0.8925,
+  "variant2_frozen_only": 0.8675,
+  "variant3_no_augmentation": 0.91125,
+  "variant4_full_pipeline": 0.913125,
+  "scratch_baseline": 0.9025,
+  "conclusion": "Fine-tuning contributes most to accuracy. CLAHE and augmentation provide additional gains. All components contribute positively."
+}
