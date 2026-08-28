@@ -16,7 +16,7 @@ All results below reflect a corrected, leakage-free validation protocol: an earl
 
 <div align="center">
   <a href="https://huggingface.co/spaces/AminahAsif/MRI-Brain-Tumor-Classification">
-    <img src="results/xai_4panel_final.png" alt="MRI Brain Tumor Classifier Demo" width="800" style="border-radius: 8px;">
+    <img src="results/xai_4panel_final(2).png" alt="MRI Brain Tumor Classifier Demo" width="800" style="border-radius: 8px;">
   </a>
 </div>
 
@@ -46,7 +46,7 @@ Upload any brain MRI image and get: a tumor class prediction, confidence score, 
 
 ## Rejection Curve
 
-![Rejection Curve](results/rejection_curve.png)
+![Rejection Curve](results/rejection_curve(1).png)
 
 *Accuracy climbs from 91.25% to 97.19% to 100% as the most uncertain predictions are deferred to a human reviewer.*
 
@@ -98,7 +98,7 @@ All three methods showed spatial agreement on tumor regions for glioma and menin
 
 ## XAI Panel
 
-![XAI 4-Panel](results/xai_4panel_final.png)
+![XAI 4-Panel](results/xai_4panel_final(2).png)
 
 *Rows: original MRI, Grad-CAM++, LIME superpixels, Integrated Gradients. Columns: glioma, meningioma, notumor, pituitary.*
 
