@@ -1,0 +1,7 @@
+{
+  "ece_before": 0.03960701990872625,
+  "ece_after": 0.05851380652125868,
+  "optimal_temperature": 0.5510204081632653,
+  "fit_on": "held-out validation split (NOT test set)",
+  "improvement_pct": -47.73594846596089
+}

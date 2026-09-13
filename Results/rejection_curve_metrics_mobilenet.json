@@ -1,0 +1,9 @@
+{
+  "mc_accuracy_no_rejection": 0.921875,
+  "acc_at_90pct_retained": 0.9534722222222223,
+  "acc_at_80pct_retained": 0.96484375,
+  "acc_at_70pct_retained": 0.9767857142857143,
+  "mean_uncertainty_correct": 0.02168538052553318,
+  "mean_uncertainty_incorrect": 0.08536704591238972,
+  "uncertainty_ratio": 3.9366173820134427
+}

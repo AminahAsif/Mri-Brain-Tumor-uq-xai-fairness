@@ -1,0 +1,12 @@
+{
+  "baseline": 0.923125,
+  "gaussian_blur_k3": 0.7,
+  "gaussian_blur_k7": 0.420625,
+  "gaussian_blur_k15": 0.345625,
+  "brightness_-50": 0.885625,
+  "brightness_+50": 0.91625,
+  "brightness_+80": 0.905625,
+  "jpeg_q80": 0.90875,
+  "jpeg_q50": 0.830625,
+  "jpeg_q20": 0.646875
+}

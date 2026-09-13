@@ -1,0 +1,40 @@
+{
+  "note": "Demographics are shared with the EfficientNetB3 run (verified deterministic in Cell 1) -- simulated, not real patient data.",
+  "gender": {
+    "male_acc": 0.93048128342246,
+    "female_acc": 0.9166666666666666,
+    "gap": 0.013814616755793319
+  },
+  "age_group": {
+    "acc_18_40": 0.948905109489051,
+    "acc_41_60": 0.9096671949286846,
+    "acc_61_plus": 0.9097387173396675,
+    "gap": 0.039237914560366405
+  },
+  "high_uncertainty_threshold_percentile": 80,
+  "high_uncertainty_threshold_value": 0.05347676941918005,
+  "gender_high_uncertainty_distribution": {
+    "Male": {
+      "pct_of_uncertain": 41.875,
+      "pct_of_total": 46.75
+    },
+    "Female": {
+      "pct_of_uncertain": 58.12500000000001,
+      "pct_of_total": 53.25
+    }
+  },
+  "age_high_uncertainty_distribution": {
+    "18-40": {
+      "pct_of_uncertain": 22.8125,
+      "pct_of_total": 34.25
+    },
+    "41-60": {
+      "pct_of_uncertain": 41.875,
+      "pct_of_total": 39.4375
+    },
+    "61+": {
+      "pct_of_uncertain": 35.3125,
+      "pct_of_total": 26.3125
+    }
+  }
+}

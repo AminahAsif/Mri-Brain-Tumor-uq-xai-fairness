@@ -1,0 +1,9 @@
+{
+  "baseline": 0.923125,
+  "motion_blur_len5": 0.714375,
+  "motion_blur_len9": 0.648125,
+  "motion_blur_len15": 0.52625,
+  "gaussian_noise_sigma5": 0.87125,
+  "gaussian_noise_sigma15": 0.79375,
+  "gaussian_noise_sigma25": 0.74125
+}

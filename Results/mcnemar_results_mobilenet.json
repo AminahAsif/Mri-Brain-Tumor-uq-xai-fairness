@@ -1,0 +1,12 @@
+{
+  "baseline_accuracy": 0.9025,
+  "mobilenet_accuracy": 0.923125,
+  "both_correct": 1397,
+  "mobilenet_only": 80,
+  "baseline_only": 47,
+  "both_wrong": 76,
+  "mcnemar_statistic": 8.062992125984252,
+  "p_value": 0.004517851295312569,
+  "significant": true,
+  "alpha": 0.05
+}
