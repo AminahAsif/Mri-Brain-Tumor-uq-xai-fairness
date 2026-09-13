@@ -36,11 +36,12 @@ Upload any brain MRI image and get: a tumor class prediction, confidence score, 
 | Macro-average AUC (4-class OvR) | **0.9853** |
 | Accuracy at 80% retention (rejection curve) | **97.19%** |
 | Incorrect predictions uncertainty ratio | **4.0×** higher than correct |
-| ECE (calibration error) | **0.0242** — well-calibrated |
+| ECE (pre-calibration) | 0.0242 |
+| ECE (after temperature scaling) | **0.0177** (27% improvement) |
 | Gender accuracy gap (fairness audit) | 2.76% |
 | Age group accuracy gap (fairness audit) | 4.85% |
 
-**Honest note on model comparison:** under the same corrected protocol, InceptionV3 (92.19%) and MobileNetV2 (91.75%, at roughly a quarter of EfficientNetB3's parameter count) both modestly outperformed EfficientNetB3. This pipeline's contribution is the uncertainty/explainability/fairness tooling built around a backbone, not a claim that EfficientNetB3 is the most accurate option tested. See `docs/limitations.md`.
+**Honest note on model comparison:** under the same corrected protocol, MobileNetV2 (92.31%, roughly a fifth of EfficientNetB3's parameter count) and InceptionV3 (92.19%) both modestly outperformed EfficientNetB3 (91.31%) on raw accuracy. I went further and ran the full uncertainty, calibration, explainability, fairness, and robustness pipeline on MobileNetV2 too (see `docs/limitations.md`): its accuracy edge over the scratch-CNN baseline is statistically significant (p=0.0045, versus p=0.178 for EfficientNetB3), but its Grad-CAM++ explanations fail outright, near-zero raw activation across all four classes, and it's substantially more fragile under Gaussian blur (34.6% vs. 55.1%) and JPEG compression (64.7% vs. ~85%), while performing comparably to EfficientNetB3 under motion blur and sensor noise. This pipeline's contribution is the uncertainty/explainability/fairness tooling built around a backbone, not a claim that either backbone is unconditionally the best choice.
 
 ---
 
@@ -70,6 +71,7 @@ The pipeline is structured across five phases, each building on the last.
 - Backbone features extracted once with `training=False` so BatchNorm uses learned statistics — only the dropout layer is stochastic
 - Per-image uncertainty = mean standard deviation across 50 prediction distributions
 - Rejection curve validated: the model's uncertainty signal directly predicts its error likelihood
+- Calibration checked via Expected Calibration Error (15 equal-width bins); temperature scaling (fit on a held-out validation split) brought ECE from 0.0242 down to 0.0177, a 27% improvement, without changing any predicted class labels
 
 ### 3. Explainability Panel - Three Methods
 
@@ -82,8 +84,9 @@ All three methods showed spatial agreement on tumor regions for glioma and menin
 ### 4. Fairness Audit
 
 - Simulated age and gender demographics based on epidemiological literature, disclosed clearly, not treated as real clinical data
-- Fairlearn equalized odds difference < 0.1 for all four classes
-- AIF360 Reweighing: gender disparate impact 0.9703 → 1.0000
+- Per-class Fairlearn Equalized Odds differences stayed under 0.1 for every class; the largest single value was 0.0692 (meningioma/gender)
+- AIF360 disparate impact: 0.9703 (gender), 0.9485 (age group)
+- Largest per-class Demographic Parity gap: 0.2804 (meningioma/age) — this tracks the simulated age-prior assigned to meningioma in the demographic simulation itself, not a measured disparity in the model (see `docs/limitations.md`)
 - Finding: the 61+ age group represents 38.1% of high-uncertainty predictions vs 26.3% of the test set, an 11.8-percentage-point gap, and the model is least confident on the most under-represented group
 - Artifact robustness: JPEG compression robust (~90% at q=50); severe Gaussian blur degrades to ~55%; real directional motion blur (5–15px) degrades to as low as 57%; additive Gaussian sensor noise degrades more gradually, to ~73% at the highest tested noise level
 
@@ -158,4 +161,3 @@ Dataset: [Masoud Nickparvar — Brain Tumor MRI Dataset](https://www.kaggle.com/
 This system is a research prototype developed for academic purposes. It is **not validated for clinical use** and must **not** be used to inform, replace, or influence any medical diagnosis or treatment decision. See [docs/ethical_considerations.md](docs/ethical_considerations%20(1).md).
 
 ---
-
